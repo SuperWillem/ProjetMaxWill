@@ -16,7 +16,7 @@ public class Produit implements Serializable{
 	private double prix;
 	private double stock;
 	
-	private LigneDeCommande ligneDeCommande;
+	private List<LigneDeCommande> ligneDeCommande;
 	private List<Categorie> listeCategories;
 	
 	/**
@@ -125,7 +125,7 @@ public class Produit implements Serializable{
 	/**
 	 * @return the ligneDeCommande
 	 */
-	public LigneDeCommande getLigneDeCommande() {
+	public List<LigneDeCommande> getLigneDeCommande() {
 		return ligneDeCommande;
 	}
 
@@ -133,7 +133,7 @@ public class Produit implements Serializable{
 	/**
 	 * @param ligneDeCommande the ligneDeCommande to set
 	 */
-	public void setLigneDeCommande(LigneDeCommande ligneDeCommande) {
+	public void setLigneDeCommande(List<LigneDeCommande> ligneDeCommande) {
 		this.ligneDeCommande = ligneDeCommande;
 	}
 	

@@ -37,15 +37,18 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	}
 
 	@Override
-	public void createProduit(Produit p) {
-		
+	public void createProduit(Produit p) {	
+		/*
+		 * 	
+		 *
 		String description=p.getDescription();
 		double prix=p.getPrix();
 		double stock=p.getStock();
 		
 		Produit prod1=new Produit(description, prix, stock);
-		
-		em.persist(prod1);
+		 */
+
+		em.persist(p);
 		
 	}
 
