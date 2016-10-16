@@ -2,6 +2,7 @@ package fr.adaming.dao;
 
 import java.util.List;
 
+import fr.adaming.model.Categorie;
 import fr.adaming.model.Gestionnaire;
 import fr.adaming.model.Produit;
 
@@ -41,5 +42,12 @@ public interface IGestionnaireDao {
 	 */
 	public void deleteProduitDao(int id);
 	
+	
+	/** Récupérer tous les produits à partir d'une Categorie
+	 * 
+	 * @param cat
+	 * @return
+	 */
+	public List<Produit> getProduitByCategorieDao(Categorie cat);
 	
 }

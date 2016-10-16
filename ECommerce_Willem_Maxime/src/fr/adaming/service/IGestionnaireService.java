@@ -2,6 +2,7 @@ package fr.adaming.service;
 
 import java.util.List;
 
+import fr.adaming.model.Categorie;
 import fr.adaming.model.Gestionnaire;
 import fr.adaming.model.Produit;
 
@@ -40,4 +41,11 @@ public interface IGestionnaireService {
 	 * @param id
 	 */
 	public void deleteProduitService(int id);
+	
+	/** Récupérer tous les produits à partir d'une Categorie
+	 * 
+	 * @param cat
+	 * @return
+	 */
+	public List<Produit> getProduitByCategorieDao(Categorie cat);
 }

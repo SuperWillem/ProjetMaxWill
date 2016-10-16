@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import fr.adaming.model.Categorie;
 import fr.adaming.model.Gestionnaire;
 import fr.adaming.model.Produit;
 
@@ -77,4 +78,8 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 		em.remove(p);
 	}
 
+	@Override
+	public List<Produit> getProduitByCategorieDao(Categorie cat) {
+		return null;
+	}
 }

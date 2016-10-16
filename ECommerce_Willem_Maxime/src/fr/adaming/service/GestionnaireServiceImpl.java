@@ -3,6 +3,7 @@ package fr.adaming.service;
 import java.util.List;
 
 import fr.adaming.dao.IGestionnaireDao;
+import fr.adaming.model.Categorie;
 import fr.adaming.model.Gestionnaire;
 import fr.adaming.model.Produit;
 
@@ -38,6 +39,11 @@ public class GestionnaireServiceImpl implements IGestionnaireService{
 	public void deleteProduitService(int id) {
 		gestdao.deleteProduitDao(id);
 		
+	}
+
+	@Override
+	public List<Produit> getProduitByCategorieDao(Categorie cat) {
+	return gestdao.getProduitByCategorieDao(cat);
 	}
 
 }
