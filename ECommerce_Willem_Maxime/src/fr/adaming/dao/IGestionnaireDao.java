@@ -11,35 +11,35 @@ public interface IGestionnaireDao {
 	 * Méthode pour obtenir la liste de tous les gestionnaires
 	 * @return
 	 */
-	public List<Gestionnaire> getAllGests();
+	public List<Gestionnaire> getAllGestsDao();
 	
 	
 	/**
 	 * Méthode pour obtenir la liste de tous les produits
 	 * @return
 	 */
-	public List<Produit> getAllProds();
+	public List<Produit> getAllProdsDao();
 	
 	
 	/**
 	 * Méthode pour créer un nouveau produit
 	 * @param p
 	 */
-	public void createProduit(Produit p);
+	public void createProduitDao(Produit p);
 	
 	
 	/**
 	 * Méthode de modification des infos d'un produit
 	 * @param p
 	 */
-	public void upDateProduit(Produit p);
+	public void upDateProduitDao(Produit p);
 	
 	
 	/**
 	 * Méthode de suppression d'un produit
 	 * @param id
 	 */
-	public void deleteProduit(int id);
+	public void deleteProduitDao(int id);
 	
 	
 }

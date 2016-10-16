@@ -12,31 +12,31 @@ public class GestionnaireServiceImpl implements IGestionnaireService{
 	
 	@Override
 	public List<Gestionnaire> getAllGestsService() {
-		List<Gestionnaire> liste=gestdao.getAllGests();
+		List<Gestionnaire> liste=gestdao.getAllGestsDao();
 		return liste;
 	}
 
 	@Override
 	public List<Produit> getAllProdsService() {
-		List<Produit> liste=gestdao.getAllProds();
+		List<Produit> liste=gestdao.getAllProdsDao();
 		return liste;
 	}
 
 	@Override
 	public void createProduitService(Produit p) {
-		gestdao.createProduit(p);
+		gestdao.createProduitDao(p);
 		
 	}
 
 	@Override
 	public void upDateProduitService(Produit p) {
-		gestdao.upDateProduit(p);
+		gestdao.upDateProduitDao(p);
 		
 	}
 
 	@Override
 	public void deleteProduitService(int id) {
-		gestdao.deleteProduit(id);
+		gestdao.deleteProduitDao(id);
 		
 	}
 

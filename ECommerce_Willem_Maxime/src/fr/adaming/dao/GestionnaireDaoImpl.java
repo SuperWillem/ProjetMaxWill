@@ -13,7 +13,7 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	EntityManager em;
 	
 	@Override
-	public List<Gestionnaire> getAllGests() {
+	public List<Gestionnaire> getAllGestsDao() {
 		
 		//Creer une requete
 		String reqjpql="SELECT g FROM Gestionnaire AS g";
@@ -25,7 +25,7 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	}
 
 	@Override
-	public List<Produit> getAllProds() {
+	public List<Produit> getAllProdsDao() {
 		
 		//Creer une requete
 		String reqjpql="SELECT p FROM Produit AS p";
@@ -37,7 +37,7 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	}
 
 	@Override
-	public void createProduit(Produit p) {	
+	public void createProduitDao(Produit p) {	
 		/*
 		 * 	
 		 *
@@ -53,7 +53,7 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	}
 
 	@Override
-	public void upDateProduit(Produit p) {
+	public void upDateProduitDao(Produit p) {
 
 		//Récupérer les infos de l'objet par son id
 		Produit prod=em.find(Produit.class, p.getId_prod());
@@ -68,7 +68,7 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 	}
 
 	@Override
-	public void deleteProduit(int id) {
+	public void deleteProduitDao(int id) {
 		
 		//Récupérer les infos de l'objet par son id
 		Produit p=em.find(Produit.class, id);
