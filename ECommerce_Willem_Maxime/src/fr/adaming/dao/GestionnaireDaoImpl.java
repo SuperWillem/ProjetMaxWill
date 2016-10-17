@@ -1,5 +1,6 @@
 package fr.adaming.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -80,6 +81,20 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 
 	@Override
 	public List<Produit> getProduitByCategorieDao(Categorie cat) {
+		
+		/*
+		int id_cat = cat.getId_cat();
+		List<Produit> listProduit = new ArrayList<Produit>();
+		String reqJpql = "Select id_prod from Categorie c where c.id_cat = cat.id_cat";
+		Query queryjpql = em.createQuery(reqJpql);
+		
+		List<Integer> listprod= queryjpql.getResultList();
+		for (int i : listprod){
+			Produit prod = em.find(Produit.class, i);
+			listProduit.add(prod);
+		}
+		*/
+		
 		return null;
 	}
 }
