@@ -3,6 +3,15 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Categorie implements Serializable{
 
 	/**
@@ -11,9 +20,13 @@ public class Categorie implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	//Attributs
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_cat;
 	private String nom;
 	private String description;
+	
+	@ManyToMany
 	
 	private List<Produit> listeProduits;
 	

@@ -1,7 +1,6 @@
 package fr.adaming.dao;
 
 import java.util.List;
-
 import fr.adaming.model.Categorie;
 import fr.adaming.model.Gestionnaire;
 import fr.adaming.model.Produit;
