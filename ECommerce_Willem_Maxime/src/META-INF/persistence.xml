@@ -10,6 +10,7 @@
 
 		<!-- Déclaration des classes persistances -->
 		<class>fr.adaming.model.Categorie</class>
+		<class>fr.adaming.model.Produit</class>
 
 
 		<!-- Config properties hibernate -->

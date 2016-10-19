@@ -18,6 +18,8 @@ public class Client implements Serializable{
 	private String adresse;
 	private String email;
 	private long tel;
+	
+	
 	private List<Commande> listeCommande;
 	
 	// ===================================================== Constructeurs =============================================

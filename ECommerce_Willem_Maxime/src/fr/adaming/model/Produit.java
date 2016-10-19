@@ -3,6 +3,17 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import fr.adaming.model.Categorie;
+
+@Entity
+@Table
 public class Produit implements Serializable{
 
 	/**
@@ -11,12 +22,18 @@ public class Produit implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	//Attributs
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_prod;
+	
 	private String description;
 	private double prix;
 	private double stock;
 	
 	private List<LigneDeCommande> ligneDeCommande;
+	
+	@ManyToMany(mappedBy="listeProduits", fetch = FetchType.LAZY)
 	private List<Categorie> listeCategories;
 	
 	/**

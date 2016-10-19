@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table
@@ -26,8 +29,11 @@ public class Categorie implements Serializable{
 	private String nom;
 	private String description;
 	
-	@ManyToMany
-	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+		      name="prod_cat",
+		      joinColumns=@JoinColumn(name="id_cat", referencedColumnName="id_cat"),
+		      inverseJoinColumns=@JoinColumn(name="id_prod", referencedColumnName="id_prod"))
 	private List<Produit> listeProduits;
 	
 	
