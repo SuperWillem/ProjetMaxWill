@@ -5,7 +5,7 @@
 	
 	
 		<!--Gestion de la dataSource -->
-		<jta-data-source>java:/MyDataSource2</jta-data-source>
+		<jta-data-source>java:/MaDataSource3</jta-data-source>
 
 
 		<!-- Déclaration des classes persistances -->
