@@ -11,6 +11,9 @@
 		<!-- Déclaration des classes persistances -->
 		<class>fr.adaming.model.Categorie</class>
 		<class>fr.adaming.model.Produit</class>
+		<class>fr.adaming.model.Client</class>
+		<class>fr.adaming.model.Commande</class>
+		<class>fr.adaming.model.LigneDeCommande</class>
 
 
 		<!-- Config properties hibernate -->

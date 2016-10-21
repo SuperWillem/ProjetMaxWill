@@ -4,6 +4,16 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Commande implements Serializable{
 
 	/**
@@ -12,10 +22,15 @@ public class Commande implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	//Attributs
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_com;
 	private Date dateCommande;
 	
+	@OneToMany(mappedBy="commande",cascade=CascadeType.REMOVE, fetch=FetchType.LAZY)
 	private List<LigneDeCommande> listeLignesDeCommande;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Client client;
 	
 	/**

@@ -2,6 +2,14 @@ package fr.adaming.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class LigneDeCommande implements Serializable{
 
 	/**
@@ -10,11 +18,16 @@ public class LigneDeCommande implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	//Attributs
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_ldc;
 	private double quantite;
 	private double prix;
 	
+	@ManyToOne
 	private Produit produit;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Commande commande;
 	
 	

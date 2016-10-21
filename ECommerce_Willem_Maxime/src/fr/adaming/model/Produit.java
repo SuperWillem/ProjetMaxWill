@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import fr.adaming.model.Categorie;
 
@@ -31,6 +32,7 @@ public class Produit implements Serializable{
 	private double prix;
 	private double stock;
 	
+	@OneToMany
 	private List<LigneDeCommande> ligneDeCommande;
 	
 	@ManyToMany(mappedBy="listeProduits", fetch = FetchType.LAZY)
