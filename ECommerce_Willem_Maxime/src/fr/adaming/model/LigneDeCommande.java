@@ -24,7 +24,7 @@ public class LigneDeCommande implements Serializable{
 	private double quantite;
 	private double prix;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Produit produit;
 	
 	@ManyToOne(fetch=FetchType.LAZY)

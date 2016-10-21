@@ -3,6 +3,7 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class Produit implements Serializable{
 	private double prix;
 	private double stock;
 	
-	@OneToMany
+	@OneToMany(mappedBy="produit",cascade=CascadeType.REMOVE, fetch=FetchType.LAZY)
 	private List<LigneDeCommande> ligneDeCommande;
 	
 	@ManyToMany(mappedBy="listeProduits", fetch = FetchType.LAZY)
