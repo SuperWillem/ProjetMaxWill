@@ -78,6 +78,40 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 		//Supprimer l'objet
 		em.remove(p);
 	}
+	
+	@Override
+	public void createCategorieDao(Categorie c) {
+		em.persist(c);
+		
+	}
+
+	@Override
+	public void upDateCategorieDao(Categorie c) {
+		
+		//Récupérer les infos de l'objet par son id
+		Categorie cat=em.find(Categorie.class, c.getId_cat());
+		
+		// Modification des infos de l'objet
+		cat.setNom(c.getNom());
+		cat.setDescription(c.getDescription());
+		
+
+		// Mise à jour dans la table
+		em.merge(cat);
+	}
+
+	@Override
+	public void deleteCategorieDao(int id) {
+		//Récupérer les infos de l'objet par son id
+		Categorie c=new Categorie();
+		c.setId_cat(id);
+		Categorie cat=em.find(Categorie.class, c.getId_cat());
+		
+		//Supprimer l'objet
+		em.remove(cat);
+		
+	}
+	
 
 	@Override
 	public List<Produit> getProduitByCategorieDao(Categorie cat) {
@@ -97,4 +131,6 @@ public class GestionnaireDaoImpl implements IGestionnaireDao{
 		
 		return null;
 	}
+
+
 }
