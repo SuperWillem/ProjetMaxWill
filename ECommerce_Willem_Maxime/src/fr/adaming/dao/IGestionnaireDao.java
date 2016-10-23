@@ -42,6 +42,27 @@ public interface IGestionnaireDao {
 	public void deleteProduitDao(int id);
 	
 	
+	/**
+	 * Méthode pour créer une nouvelle catégorie
+	 * @param c
+	 */
+	public void createCategorieDao(Categorie c);
+	
+	
+	/**
+	 * Méthode de modification des infos d'une categorie
+	 * @param c
+	 */
+	public void upDateCategorieDao(Categorie c);
+	
+	
+	/**
+	 * Méthode de suppression d'une categorie
+	 * @param id
+	 */
+	public void deleteCategorieDao(int id);
+	
+	
 	/** Récupérer tous les produits à partir d'une Categorie
 	 * 
 	 * @param cat
