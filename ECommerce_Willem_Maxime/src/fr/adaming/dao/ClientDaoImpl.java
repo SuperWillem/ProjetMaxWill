@@ -2,11 +2,14 @@ package fr.adaming.dao;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import fr.adaming.model.Client;
+import fr.adaming.model.Produit;
 
+@Stateless
 public class ClientDaoImpl implements IClientDao{
 
 	EntityManager em;
@@ -45,5 +48,17 @@ public class ClientDaoImpl implements IClientDao{
 	@Override
 	public Client getClientByIdDao(int id) {
 		return em.find(Client.class, id);
+	}
+
+	@Override
+	public List<Produit> getAllProduitDao() {
+		
+		//Creer une requete
+		String reqjpql="SELECT p FROM Produit AS p";
+		Query queryjpql=em.createQuery(reqjpql);
+		List<Produit> liste=queryjpql.getResultList();
+		
+		//Retourner la liste des produits
+		return liste;
 	}
 }

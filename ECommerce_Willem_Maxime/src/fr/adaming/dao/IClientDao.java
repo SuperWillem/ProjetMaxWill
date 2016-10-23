@@ -2,8 +2,11 @@ package fr.adaming.dao;
 
 import java.util.List;
 
-import fr.adaming.model.Client;
+import javax.ejb.Local;
 
+import fr.adaming.model.Client;
+import fr.adaming.model.Produit;
+@Local
 public interface IClientDao {
 	
 	/** Récupération de tous les clients
@@ -36,4 +39,11 @@ public interface IClientDao {
 	 * @return
 	 */
 	public Client getClientByIdDao(int id);
+	
+	public List<Produit> getAllProduitDao();
+	/** Récupérer tous les produits pour le client
+	 * 
+	 * 
+	 * @return liste des produits
+	 */
 }

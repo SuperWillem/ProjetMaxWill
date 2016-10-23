@@ -2,8 +2,12 @@ package fr.adaming.service;
 
 import java.util.List;
 
-import fr.adaming.model.Client;
+import javax.ejb.Local;
 
+import fr.adaming.model.Client;
+import fr.adaming.model.Produit;
+
+@Local
 public interface IClientService {
 
 	/** Récupération de tous les clients
@@ -36,5 +40,12 @@ public interface IClientService {
 	 * @return
 	 */
 	public Client getClientByIdService(int id);
+	
+	public List<Produit> getAllProduitService();
+	/** Récupérer tous les produits pour le client
+	 * 
+	 * 
+	 * @return liste des produits
+	 */
 
 }
